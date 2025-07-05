@@ -1,6 +1,12 @@
 const express = require('express');
-const router = express.Router();
 const db = require('./db');
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.send('🚀 REST API is running!');
+});
+
 
 router.get('/accounts', (req, res) => {
     db.query('SELECT * FROM tbl_accounts', (err, results) => {
